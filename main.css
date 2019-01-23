@@ -1,0 +1,130 @@
+body
+{
+    background-color: #2f3336;
+    color: #efefef;
+    margin:0;
+    font-size: 17px;
+}
+
+h1.logo
+{
+    font-size:44px;
+    font-weight: 700;
+    color:#ddd;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 6rem;
+	min-height: 130px;
+}
+
+#logotyp
+{
+    background-image: url("img/cartographer.png");
+    min-height: 10vh;
+}
+
+nav
+{
+    background-color: #1c74b2;
+    text-align: center;
+}
+
+.menu
+{
+    list-style-type:none;
+    margin:0px;
+    padding:10px;
+    font-size:18px;
+    min-height: 30px;
+    line-height: 200%;
+}
+
+.menu > li
+{
+    display:inline-flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left:1px dashed #0a2b42;
+}
+.menu > li:first-child
+{
+    border-left: none;
+}
+
+.menu a
+{
+    color:#fff;
+    text-decoration: none;
+}
+.menu a:hover
+{
+    color:#0a2b42;
+}
+
+.container
+{
+	text-align: center;
+}
+
+.subject
+{
+	display: inline-flex;
+	justify-content: center;
+}
+
+img
+{
+    max-width: 40vw;
+	height:40vh;
+	
+}
+
+.subject a
+{
+    opacity: 0.7;
+}
+
+.subject a:hover
+{
+    opacity: 1;
+}
+
+figure
+{ 
+    margin: 8px;
+    
+}
+
+#mymap
+{
+	height: 70vh;
+	width:auto;
+}
+.tekst{
+    text-align: justify;
+    text-indent: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.obrazek img{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    margin: auto;
+    
+}
+.model{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    margin: auto;
+    padding: 
+    
+    
+    
+}
+
+

@@ -1,0 +1,203 @@
+<DOCUMENT html>
+    <html lang="pl">
+        <head>
+           <!--metadane identyfikacji-->
+           
+            <meta charset="utf-8">
+            <meta name="description" content="Strona interenetowa na potrzeby realizacji projektu">
+            <meta name="keywords" content="ATE, geodezja">
+            <meta name="author" content="PP">
+            <title> Analiza terenu projekt</title>
+            <link rel="stylesheet" href="../main.css">           
+        </head>
+        <body>
+            <header>
+               <div id="logotyp">
+                    <h1 class="logo">
+                    <span style="color:#2a5daf">Anal</span>iza
+                    <span style="color:#2a5daf">Ter</span>enu 
+                    <span style="color:#2a5daf">pro</span>jekt
+                    </h1>
+               </div>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="../index.html">Strona główna</a><li>
+                    <li><a href="#">O projekcie</a><li>
+ 
+                </ul>
+            </nav>
+            
+            <div class="container">
+                <div class="tekst"> 
+                    <article>
+                        <header>
+                            <h1>Opis ogólny</h1>
+                            <p>15.01.2019| 21:04 | Paweł </p>
+                        </header>
+                        <p>
+                        Celem zadania było przeprowadzenie analiz wielokryterialnych, mających na celu wyznaczenie najlepszej lokalizacji szkoły. 
+                        Do wykonania laboratorium zostały wykorzystane następujące materiały: pliki w formacie .shp z portalu Open Street Map, numeryczny Model Terenu zapisany w formacie ASCII w pliku .txt, oprogramowanie ArcGIS 10.2, pliki w formacie .shp zawierające Państwowy Rejestr Granic, edytor tekstowy Microsoft Word 2016
+
+                        </br></br>
+                Zadanie zostało wykonane w programie ArcMap, programu składającego się na ArcGIS.  Zadanie wykonałem poprzez utworzenie zadanej kompozycji mapowej i umieszczenie na niej wszystkich elementów wymaganych przez wykładowcę. 
+                        
+               
+                        <header>
+                          
+                            <h1>
+                                Opis wykonanych czynności
+                            </h1>
+                            
+                        </header>
+                        <p>
+Analizy zostały przeprowadzone w oprogramowaniu ArcGis. Materiałami wyjściowymi były dane OSM pobrane z download.geofabrik.de w formacie shapefile oraz dane z PRG. 
+Analiza oparta na wyżej wymienionych kryteriach pozwoliłaby na wyłonienie najlepszego miejsca na powstanie nowej placówki szkoły. Niestety, ograniczenia sprzętowe pozwoliły mi na wygenerowanie jedynie odpowiedzi na część podanych kryteriów wyżej. Dlatego tez nie mogę stwierdzić iż zadanie zostało wykonane poprawie z uwagi na brak wszystkich kryteriów.
+Pierwszą mapą jaką wykonałem w ramach zadania była mapa spadków, korzystając z pobranego NMT dla województwa podlaskiego i funkcji ASCII 3D to Feature Class. Ustawiłem odstęp między punktami 100m format pliku wejściowego XYZ. Kolejnym krokiem było utworzenie powierzchni rastrowej za pomocą funkcji IDW z ArcToolbox. Następnym krokiem było przycięcie wygenerowanych elementów do granic miasta Białystok za pomocą funkcji Clip. Granice województwa miasta zostały wcześniej wyselekcjonowane za pomocą Select by attributes. Ostatnim etapem było wykonanie mapy spadków za pomocą funkcji Slope.
+ </br></br>
+Za pomocą funkcji Clip zostały przycięte wcześniej wspominane warstwy tematyczne. Szczególnej uwagi wymagało wyodrębnienie takich obiektów jak szkoły, więzienia, cmentarze, tereny rekreacyjne i osiedla mieszkaniowe. Za pomocą funkcji Select z warstw pois_a(budynki użyteczności publicznej) oraz landuse_a(zagospodarowanie terenu). Można to zrealizować za pomocą funkcji fclass, wpisując odpowiedną wartość związaną z pożądanym efektem.
+ </br></br>
+Kolejny etap to utworzenie stref buforowych(wartości zostały podane przed opisem czynności) za pomocą funkcji Multiple Ring Buffer.  Następnie zostały utworzone nowe klasy za pomocą narzędzie Identity.
+                        <header>
+                            <h1>Wykonane modele</h1>
+                        </header>
+                        <p>
+                        W toku realizacji laboratorium zostały wykonane modele w module ModelBuilder.
+                        </p>
+                        <center>
+                        <h3> Model nr 1</h3>
+                        </center>
+                        </p>
+                <div class="model">
+                    <img src="../img/mapy_spadkow.jpg">
+                </div>
+                        <p>
+                        Pierwszy model został utworzony w celu wygenerowania mapy spadków, w jego skład wchodzą trzy narzędzia: ASCII 3D to Feature Class, IDW, Clip. Dane wejściowe to plik tekstowy z danymi XYZ i granica administracyjna miasta. 
+                        </p>
+                        <center>
+                        <h3> Model nr 2</h3>
+                        </center>
+                        </p>
+                <div class="model">
+                    <img src="../img/model.jpg">
+                </div>
+                        <p>
+                            Kolejny model, niezwykle złożony miał na celu utworzeniu rastrów ze strefami buforowymi. Narzędzia, które zostały wykorzystane w tym modelu to: Clip(przycięcie klas do granic), Select(wybór obiektów z warstw), Multiple Ring Buffer(tworzenie buforów), Identity(obliczenie przecięcia geometrycznego stref buforowych i granicy miasta). Dane wyjściowe to pliki w formacie shapefile. 
+                        </p>
+                        <header>
+                            <h1>Wygenerowane mapy</h1>
+                        </header>
+                        <p>
+                        W efekcie uruchomienia modelu numer 1, powstała mapa spadków obejmująca obszar administracyjny miasta Białystok.    
+                        </p>    
+                <div class="obrazek">
+                    <img src="../img/wysokosci.jpg">
+                </div>
+<p>
+Białystok położony na Nizinie Podlaskiej, w zachodniej części makroregionu zwanego Wysoczyzną Białostocką. Jest największym miastem północno-wschodniej Polski i stolicą województwa podlaskiego. Na wygenerowanym modelu NMT widać stopień zróżnicowania terenu. Wysokości bezwlędne wynoszą od 110 do 170 m n.p.m. co daje różnicę wysokości rzędu 60 m. Jest to stosunkowo niewielka różnica wysokości, która nie sprawia problemów w życiu codziennym mieszkańców, w porównaniu do terenów górskich.
+</br>
+Następnie zostało wygenerowanych 9 map wraz ze strefami buforowymi, z elemantami, które mają wpływ na lokalizację szkoły.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/kolej.jpg">
+                </div>
+<p>
+Mapa przedstawia rozmieszczenie sieci kolejowej na terenie miasta Białystok. Dodatkowo są wyznaczone strefy buforowe o odległościach 200, 300, 400m. Lokowanie szkoły lub innej placówki oświatowej w pobliżu sieci kolejowej jest bardzo niewskazane. Głównym czynnikiem jest bezpieczeństwo. Dodatkowo sieć kolejowa, może ograniczyć możliwości dojazdu do szkoły, na względu na brak przejazdów. Uciążliwy i rozpraszający jest również hałas, który jest generowany przy okazji przejazdu pociągu.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/drogi.jpg">
+                </div>
+<p>
+Dane zawarte na tej mapie wskazują, że sieć drogowa na całym obszarze administracyjnym miasta jest dobrze rozwinięta. Gęsta sieć drogowa w centralnej części miasta wskazuje na centrum Białegostoku. Nieco rzadsza jest na północnym i na południowym krańcu miasta. Na południu miasta znajdują się duże kompleksy leśne oraz lotnisko rekreacyjne. Pomimo, że pod kątem takich elementów analiza nie została przeprowadzana to osoba, mająca doświadczenie może stwierdzić, że w takich miejscach nie ma dogodnej infrastruktury i warunków do tworzenia kolejnej placówki oświatowej.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/szkoly.jpg">
+                </div>
+<p>
+Lokalizacja szkół wraz z buforami 400, 600 i 800m informuje nas o lokalizacji istniejących placówek oświatowych i wyraźnie wskazuje miejsca, w których nie powinny powstawać nowe szkoły.  Największe zagęszczenie szkół występuje w centralnej części miasta. Taki rozkład wiąże się zapewne z większym zagęszczeniem ludności w tej części. Miasto w ciągu ostatnich kilku lat zostało powiększone o sąsiednie wsie. Na północy i południu miasta widać, że szkół praktycznie nie ma. Przy wyborze lokalizacji nowej szkoły należy również uwzględnić kierunki rozwoju miasta.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/wodyl.jpg">
+                </div>
+<p>
+Mapa przedstawia rozmieszczenie cieków liniowych wraz z buforami 150, 200, 250 i 300m. W ich sąsiedztwie nie powinny znajdować się szkoły ze względów bezpieczeństwa. Cieki wodne utrudniają również sprawną komunikację lądową. Aby przejechać przez ciek należy wybudować most. Dodatkową kwestią jest fakt, że w okolicach cieków mogą występować tereny zalewowe, co w przyszłości może narazić budynek na podtopienia lub co gorsza, na uszkodzenia.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/rekreacyjne.jpg">
+                </div>
+<p>
+Bliskość terenów rekreacyjnych jest elementem, która sprzyja budowie szkół. Blisko takich terenów nie należy zachowywać ciszy, jest dużo wolnej przestrzeni. Dodatkowo te tereny można wykorzystać do prowadzenia zajęć. Szczególnym rodzajem zajęć sa zajęcia sportowe, dzięki czemu szkoła będzie mogła zaoszczędzić na dojazdach do obiektów rekreacyjnych i na budowie nowych.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/wodyp.jpg">
+                </div>
+<p>
+Sąsiedztwo wód powierzchniowych nie sprzyja budowie szkół, głównie za względów bezpieczeństwa. Na terenie miasta Białystok znajduje się kilka niewielkich zbiorników wodnych. Najczęściej są to niestrzeżone obiekty, które pełnią rolę bardziej wizualne, a nie użytkowe. Takie zbiorniki mogą nie być odpowiednio zabezpieczone ogrodzeniami i na pewno nie są tam zatrudnieni w sezonie letnim ratownikami. Szkoły powinny być w odpowiedniej odległości od takich obiektów, dlatego że bliskość takich obiektów szczególnie przy sprzyjających warunkach atmosferycznych może wiązać się z niebezpiecznymi konsekwencjami.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/osiedla.jpg">
+                </div>
+<p>
+Na mapie zostały przedstawione tereny mieszkaniowe ze strefami buforowymi 100, 200, 300, 400m-ich bliskość sprzyja budowie nowych szkół i wskazuje, gdzie może mieszkać najwięcej ludzi. W ścisłym centrum widać, że mało jest tam osiedli mieszkaniowych. Taki obraz wskazuje, że jest to centrum miasta, w którym są głównie obiekty usługowe, rozrywkowe i urzędy.
+</p>
+</br></br></br>
+                <div class="obrazek">
+                    <img src="../img/cmentarze.jpg">
+                </div>
+<p>
+Lokalizacja szkół w okolicy cmentarzy nie jest wskazana, ze względu na charakter i powagę miejsca. Strefy buforowe to 300 i 400m. Powyższe dane pokazują, że najwięcej takich miejsc jest od wschodu do zachodu w centralnej części miasta. Ponadto mapa wskazuje, że kilka cmentarzy jest bardzo blisko i zapewne są to sąsiadujące ze sobą cmentarze różnych wyznań i komunalne. Dodatkowo w czasie 1 listopada ruch w pobliżu nekropolii znacznie się zwiększa. Często zmieniana jest organizacja ruchu, zamykane niektóre ulice. Taki fakt może utrudnić dojazd do szkoły.
+</p>
+</br>
+</p>
+                        <header>
+                            <h1>Analiza wielokryterialna</h1>
+                        </header>
+<p>
+Efektem końcowym laboratorium jest mapa przedstawiająca optymalną lokalizację nowej szkoły. Takie opracowanie może służyć jako opracowanie pomocnicze, jednak taka analiza powinna być ograniczona do mniejszego obszaru (np. osiedla) lub powinny być uwzględnione inne kryteria. Najczęściej w miastach jest kilka szkół, przypadają w zależności od liczby mieszkańców. Istotnym czynnikiem jest w tym przypadku wiek mieszkańców. Na osiedlach, na których mieszkają młodzi ludzie w wieku przedszkolnym szkoły będą bardziej potrzebne, niż te na, których mieszkają osoby w wieku średnim. Trzeba również uwzględnić fakt, że zanim szkoła powstanie wiek mieszkańców wzrośnie, przez analiza może być nieaktualna.
+</p>
+</br></br>
+                <div class="obrazek">
+                    <img src="../img/klasyfikacja.jpg">
+                </div>
+</br></br>
+<p>
+Powyższa mapa pokazuje teren miasta Białystok przedstawiając najmniej i najbardziej korzystne obszary do budowania nowych placówek oświatowych. 1-najmniej korzystne, 4-najlepsza lokalizacja. Poprzednie opracowania przedstawiały oddzielnie każdy czynnik, który wpływa na wybór lokalizacji tego typu obiektu. Powyższy rodzaj opracowania znacznie ułatwia podjęcie właściwej decyzji. Różnego rodzaju opracowania są potrzebne na różnych etapach podejmowania decyzji. Mapa poniżej wskazuje jednoznacznie najlepszą lokalizację nowej placówki. 
+</p>
+                <div class="obrazek">
+                    <img src="../img/optymalna.png">
+                </div>
+</br></br>
+<p>
+Następnie z zawartych w oprogramowaniu map bazowych wybrano ortofotomapę i wrzucono na pole mapowe. Poprzez przeanalizowanie wszystkich terenów najkorzystniejszych i  ortoobrazów wybrano dwa obszary, które najlepiej nadają się na lokalizację szkoły. Wpływ na wybór miało w głównej mierze zlokalizowanie w pobliżu licznych blokowisk, osiedli, a także położenie na obszarach o małym nachyleniu terenu. Poniższy rysunek przedstawia ostateczny wynik przeprowadzonej analizy.
+</br></br>
+                
+
+                        <header>
+                            <h1>Wnioski</h1>
+                        </header>
+<p>
+Wykorzystanie analiz wielokryterialnych pozwala na opracowanie produktu, który ułatwia podejmowanie decyzji. W takim przypadku jak opracowywany w laboratorium, czyli wybranie odpowiedniej lokalizacji mapy. Budowa szkoły jest inwestycją, której koszty to kilka milionów złotych. Oprócz tego jest to obiekt, z którego w przyszłości będzie korzystać wiele osób- jej lokalizacja jest zależna od otoczenia. Bardzo istotne jest, uwzględnienie wielu czynników wpływających na jej lokalizację i zaprezentowanie jej w jednym wyniku, które znacznie ułatwi osobom decyzyjnym na podjęcie właściwej lokalizacji. W pracy nawet została stworzona mapa spadków, która przedstawia pogląd na rzeźbę terenu. Podczas wykonywania laboratorium bardzo istotne było utworzenie właściwych relacji pomiędzy poszczególnymi funkcjami, niestety niekiedy program odmawiał posłuszeństwa.  Bardzo pomocne są dane Open Street Map, które zawierają wiele cennych informacji i są bezpłatne.
+</br>
+</br></br>
+</p>
+                        <header>
+                            <h1>Podsumowanie</h1>
+                        </header>
+<p>
+Zadanie wykonywane w ramach przedmiotu jest bardzo praktyczne. Pozwala na przeprowadzenie analiz, które pozwalają szybko podjąć decyzję w wielu istonych kwestiach przy uwzględnieniu różnych elementów. 
+</br></br></br>    
+</p>
+                    </article>            
+                </div>
+
+    
+            </div>
+        </body>
+    </html>
